@@ -1,0 +1,13 @@
+version: '3'
+services:
+  smtpserver:
+    image: rnwood/smtp4dev:latest
+    container_name: tidysmtpserver
+    volumes:
+      - tidysmtpserverdata:/var/opt/smtpServer 
+    ports:
+      - "3020:80"
+      - "2535:25"
+volumes:
+   tidysmtpserverdata:
+     external: true
